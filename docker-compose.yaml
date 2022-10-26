@@ -1,0 +1,13 @@
+version: "3.6"
+services:
+  redshift:
+    image: "postgres:15.0-alpine"
+    volumes:
+      - ./redshift:/var/lib/postgresql/data
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_USER: redshift
+      POSTGRES_PASSWORD: redshift
+      POSTGRES_DB: redshift
+    ports:
+      - 5432:5432
